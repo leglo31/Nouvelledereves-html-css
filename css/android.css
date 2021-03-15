@@ -1,0 +1,343 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+Created on : 04 mars 2021, 16:42:45
+Author     : Glotin Laurent
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+/*
+font-family: 'Advent Pro', sans-serif;
+font-family: 'Dancing Script', cursive;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Advent+Pro&family=Dancing+Script&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+
+*{margin:0; padding: 0; box-sizing: border-box;}
+
+@media screen and (max-width: 370px) {/*portable*/
+    h1{font-size:1.1em;color: darkslateblue;}
+    p,h3,header a{font-size: 0.6em;color: darkslateblue;}
+    #script,#ulinscription a,.tousaside a, label,footer li,form input{font-size: 0.6em; color: darkslateblue;}
+    footer a{color: darkslateblue;}
+    h5{font-size: 0.5em;}
+    .spanouvelle{font-size: 0.4em;color: darkslateblue;}
+    h4{font-size: 1em;color: darkslateblue;}
+}
+
+@font-face {
+    font-family: 'Aileron-Bold';
+    src: url('inc/Aileron-Bold.otf') format('truetype');
+}
+
+
+html{
+    background-color:darkslategray;
+
+}
+body {
+    /*    font-family:'Aileron-Regular';*/
+    font-family: 'Advent Pro', sans-serif; 
+    height:auto;/*prend automatiquement la hauteur du contenu*/
+    background-color:floralwhite;
+    margin: 5px 10px 5px 10px;
+    display: flex;
+    flex-direction: column; 
+    border-radius: 20px;
+
+}
+
+/**************************************************************************/
+/*HEADER*/
+/**************************************************************************/
+header{
+    background: url(moon.jpg) ;
+    height: 30vh;/*viewport height=>basé sur la hauteur de la fénêtre, ici 35%*/ 
+    background-position: center;/*se positionne pour voir l'image au centre */ 
+    background-size: cover;/*l'image remplit tout l'espace en conservant hauteur/largeur*/ 
+    display: flex;/* les blocs se placent par défaut côte à côte à l'horizontal*/  
+    flex-direction: column;/* les blocs se placent par colonne les uns sous les autres*/ 
+    justify-content: space-between;
+    border-top-left-radius:  20px;
+    border-top-right-radius:  20px;
+}
+
+
+/****TITRE****/
+header h1{
+    animation-name:  monanimation;/*l'animation est appelé ici*/ 
+    animation-duration: 10s;
+    margin-left: 10px;
+    margin-top: 15px;/*h1 marge en haut*/ 
+    font-family: 'Lovers Quarrel', cursive;  
+    text-align: left;/*h1 aligné à droite*/ 
+    /*    color: darkslateblue;*/
+    /*    font-size: 2.5em;h1 taille police */
+    overflow: hidden;/*s'efface quand il n'y a plus de place*/
+    font-weight: 600;/*font avec valeur numérique correspondant à un bold léger plus*/
+}
+
+@keyframes monanimation{/*construction de l'animation pour le h1*/ 
+    30%{transform: scale3d(0.7, 1, 2.5);}/*h1 descend et tourne, premier chiffre vitesse*/ 
+}
+
+/****BARRE DE NAVIGATION****/
+
+header nav{
+    /*background-color:antiquewhite;*/
+    /*opacity: 0.8;*/
+    background-color: rgba(250, 235, 215, 0.8);
+    /*on priviligie rgba afin d'utiliser l'opacity car elle ne va pas hériter les autres élements à l'instar d'opacity*/
+} 
+
+
+.menu{
+    display: flex;/*les blocs se placent par défaut côte à côte à l'horizontal*/
+    list-style-type: none; /*Enlever les points devants les li*/
+    margin: 0; 
+    padding-left: 0;
+} 
+
+.submenu{
+    background-color: rgba(246, 231, 211, 0.95);   
+    list-style-type: none; /*Enlever les points devants les li*/  
+    display: none;
+    position: absolute; /*Pour que les gds menus s'affichent normalement*/
+    left: 0;/* permet de centrer les li sous menu*/
+    right: 0;
+}
+
+.deroulant:hover{
+    /*background-color: #D2B48C;changement couleur lorsque l'on passe sur <a>*/
+    background-color: rgba(210, 180, 140, 0.7);
+} 
+
+.deroulant a:hover{
+    transform: scale(1.05); /*survole avec le pointeur grossissement*/
+}
+
+.menu li, .deroulant{
+    text-align: center;
+    flex: 1 /* L'espace dans le conteneur parent ul est réparti également avec ses enfants li */
+}
+nav a{
+    color: darkslateblue;
+    display: block;/*elles prennent toute la largeur disponible*/
+    text-decoration: none;
+    padding: 5px 0px 5px 0px;/* espace en haut et en bas*/
+    font-weight: bold;
+}
+
+.submenu li:hover{
+    background-color: #D2B48C;
+    cursor: pointer; /*Changer le curseur*/
+}
+
+.menu > li:hover .submenu {
+    display: block;
+    opacity: 1;
+}
+
+.menu > li{
+    position: relative;
+
+}
+
+#logo {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+/****FIN BARRE DE NAVIGATION****/
+
+/**************************************************************************/
+/* FIN HEADER*/
+/**************************************************************************/
+
+
+
+/**************************************************************************/
+/*INSCRIPTION*/
+/**************************************************************************/
+.barreinscription{
+    padding: 2px;
+    display: flex;
+    align-content: center;
+    justify-content:space-between;
+    flex-wrap: wrap; /*met à la ligne les éléments si écran reduit*/
+}
+
+#script{
+    margin: 5px; 
+    /*    font-size: 0.9em;*/
+    /* color: darkslateblue;*/
+    font-weight: bold;  
+    overflow: hidden;
+}
+
+
+#ulinscription{
+    list-style-type: none;/*enlève les points sur les li*/ 
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+#ulinscription li a{
+    display: flex;
+    margin: 5px;   
+    font-weight: bold;
+    text-decoration: none;
+   color: darkslateblue;
+}
+
+#ulinscription  li:hover{
+    transform: scale(1.05);
+}
+/**************************************************************************/
+/*FIN INSCRIPTION*/
+/**************************************************************************/
+
+
+
+/**************************************************************************/
+/*CENTRE*/
+/**************************************************************************/
+.centre{
+    display: flex;
+    /*margin-left: 5px;*/
+    margin-right: 2px;
+    background-position: center;/*quand on reduit la fenêtre, elle se reduit de tous les cotés*/ 
+    background-size: cover;
+    overflow: hidden;/*s'efface quand il n'y a plus de place*/
+}
+
+main{
+
+    overflow: hidden;/*s'efface quand il n'y a plus de place*/
+}
+
+/****CONTENU NOUVELLE****/
+article{
+    display: flex;
+    flex-direction: column;/*met tout le contenu dans les article en mode colonne, les uns au dessus des autres*/ 
+    margin-left: 2px;/*marge entre les article*/ 
+    /*border-left: 1px solid #DCDCDC;*/
+    font-family:'Aileron-Bold';
+}
+
+/*.article:nth-child(3){
+border-bottom: 1px solid #DCDCDC; trait sous le dernier article 
+}*/
+
+article div{
+    padding: 3.5px;/*hauteur des titres h5 qui sont en gray afin d'être aussi haut que ceux des asides */ 
+    color: white;  
+    background-color: gray;
+}
+
+article h5,h4{
+    margin-left: 1px;/*marge gauche des h5 et h4 ->titre en fond gris+Nouvelles de rêves*/ 
+}
+
+article h3{
+    /*        border: 1px solid #DCDCDC; cadre pour essai*/
+    padding: 3px; /*hauteur des h3 ->nouvelles*/ 
+    margin: 0px 5px 0px 5px;
+    font-family:'Aileron-Bold';
+    /*    font-weight:normal;enlève le bold mis par défaut */
+
+}
+#h3dixnouvelles:nth-child(even) {
+    background-color:#FAF0E6;/*change de couleur une fois sur deux(paire->even)*/ 
+}
+#h3dixnouvelles{
+    margin-bottom: 2px;/*marge bas des li car ils sont sur la boucle foreach*/ 
+}
+
+#h3lastnews{
+    background-color:#FAF0E6;
+    margin-top: 4px;
+    margin-bottom: 4px;/*marge haut et bas du h3 de la dernière nouvelle...
+    obligé de faire ainsi à cause du foreach sur les nouvelles et qui ont aussi un h3 */ 
+}
+
+#h5dixnouvelles{
+    margin-bottom: 4px;/*marge bas du h3->10 dernières nouvelles*/ 
+}
+
+p{
+    font-family:'Aileron-Bold';
+    margin: 0px 2px 5px 2px;
+
+}
+
+article h4{
+    padding: 4px 0px 4px 0px;
+    font-family: 'Lovers Quarrel', cursive; 
+
+}
+#img{
+    background-image: url(unders.png);
+    background-repeat:no-repeat;
+    background-position: top;/* se positionne en haut et au centre  */
+}
+
+
+#section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+section{
+    flex-grow: 1;
+}
+
+section:nth-child(1){
+    border-right: 1px solid #DCDCDC;
+}
+
+
+/**************************************************************************/
+/*FOOTER*/
+/**************************************************************************/
+
+footer{
+    border-top: 1px solid #DCDCDC;
+    font-weight: 500;
+}
+footer a{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#copyright{
+    background-size: cover;
+    overflow: hidden; 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /*wrap met à la ligne les li losqu'il n'y a plus de place horizontale*/
+    list-style-type: none;/*enlève les points sur les li*/    
+    margin: 10px;
+    align-items:center; /* aligne les li */
+}
+
+#reseau{
+    list-style-type: none;/*enlève les points sur les li*/   
+    display: flex;
+    align-items:center;
+    /*wrap met à la ligne les li losqu'il n'y a plus de place horizontale*/
+}

@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+        <title>Charte</title>
+        <link rel="stylesheet" href="css/charte.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="shortcut icon" type="image/x-icon" href="css/moon.ico">
+
+
+
+    </head>
+
+    <body>
+
+        <!--HEADER-->
+            <header>
+            <h1>Nouvelles de Rêves</h1>
+            <nav >
+                <ul class="menu">
+                    <li id="logo" class="deroulant"><a href="index.html">Accueil</a></li>
+
+                    <li class="deroulant"><a href="#">Nouvelles</a>
+                        <ul class="submenu">
+                            <li><a href="aventure.html">Aventure</a></li>
+                            <li><a href="fantastiques.html">Fantastique</a></li>
+                            <li><a href="policier.html">Policier</a></li>
+                            <li><a href="historique.html">Historique</a></li>
+                            <li><a href="sciencefiction.html">Science-fiction</a></li>
+                            <li><a href="reflexions.html">Réflexion</a></li>                 
+                        </ul>              
+                    </li>
+
+                    <li class="deroulant"><a href="#">Poésies</a>
+                        <ul class="submenu">
+                            <li><a href="classiques.html">Classique</a></li>
+                            <li><a href="contemporaine.html">Contemporaine</a></li>
+                            <li><a href="prose.html">En Prose</a></li>
+                            <li><a href="poésielibre.html">Poésie libre</a></li>
+                            <li><a href="chansons.html">Chanson</a></li>
+                            <li><a href="reflexions.html">Réflexion</a></li>                 
+                        </ul>              
+                    </li>
+                    <li class="deroulant"><a href="charte.html">Charte</a></li>                    
+                    <li class="deroulant"><a href="liens.html">Liens</a></li>
+                    <li class="deroulant"><a href="contact.html">Contact</a></li>
+                </ul> 
+
+            </nav>
+
+        </header>
+
+        <!--INSCRIPTION/CONNECTION-->
+     
+            
+                    <div class="barreinscription">
+
+            <ul id="ulinscription">
+
+
+                 <!--<c:choose>
+                    <c:when test="${empty sessionScope.sessionUtilisateur}">-->
+                        <li><a href="inscription.html">Inscription</a></li>
+                       <li><a href="connexion.html">Connexion</a></li>
+                         <!--</c:when>
+                        <c:otherwise>-->
+                        <li><a href="#">Déconnexion</a></li>
+                        <!-- </c:otherwise>
+                    </c:choose>-->
+            </ul>
+
+            <div id="script"><SCRIPT LANGUAGE="JavaScript">
+                var ladate = new Date()
+                var tab_jour = new Array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
+                var tab_mois = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+                Jour = ladate.getDate();
+                Heure = ladate.getHours();
+                Min = ladate.getMinutes();
+                Annee = ladate.getFullYear();
+                Seconde = ladate.getSeconds();
+                var dateFormatee = (tab_jour[ladate.getDay()] + " " + Jour + " "
+                        + tab_mois[ladate.getMonth()] + " " + Annee + " &nbsp;" + "&nbsp;" + Heure + ":"
+                        + Min )
+                document.write(dateFormatee);
+                </SCRIPT></div>
+        </div>
+
+<article>
+        <p>Toute communauté doit se plier à certaines règles si elle ne veut pas passer de l'ordre au chaos. </p>
+           <p> Ce petit guide n'est là que pour s'assurer que tout se passe bien, et dans la bonne humeur. </p> 
+           <p>Vous y trouverez également qui fait quoi et le moyen de nous contacter.
+            <p> La charte est en cours d'élaboration...merci de votre compréhension</p>
+            <br>
+            <ul class="ulcharte">               
+                <li>1. Concept du site :</li>
+                <li>2. Sur l'acceptation des textes :</li>
+                <li>3. Sur la suppression des textes :</li>
+                <li>4. Sur la suppression des comptes :</li>
+                <li>5. À propos de la liberté d'expression  :</li>
+                <li>6. Sur la modération des commentaires :</li>
+                <li>.......</li>
+            </ul>
+            
+            
+     </article>       
+           <footer>
+     <ul id="copyright"> 
+    <!-- Vérification de la présence d'un objet utilisateur en session -->
+    <c:choose>
+        <c:when test="${!empty sessionScope.sessionUtilisateur}">
+          <!-- Si l'utilisateur existe en session, alors on affiche son adresse email. -->
+           
+                
+            <li>Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.mail}</li>
+            
+        </c:when>
+        <c:otherwise>
+            <li>Vous n'êtes pas connecté. Souhaitez-vous vous <a href="connexion.html">connecter?</a></li>
+       
+        </c:otherwise>
+    </c:choose>
+   
+    
+      
+            <li>NouvellesDeRêves©Copyright 2021 | Tous droits réservés</li>
+             <li>Designed by Glotin Laurent</li> 
+    </ul>
+    
+    
+    
+</footer>

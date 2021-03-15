@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="ie=chrome">
+        <title>Accueil</title>
+        <link rel="stylesheet" href="css/global.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+
+
+
+    </head>
+
+    <body>
+
+        <!--HEADER-->
+        <header>
+            <h1>Nouvelles de Rêves</h1>
+            <nav >
+                <ul class="menu">
+                    <li id="logo"><a href="index.html">Accueil de Rêves</a></li>
+
+                    <li class="deroulant"><a href="#">Nouvelles</a>
+                        <ul class="submenu">
+                            <li><a href="aventure.html">Aventure</a></li>
+                            <li><a href="fantastiques.html">Fantastique</a></li>
+                            <li><a href="policier.html">Policier</a></li>
+                            <li><a href="historique.html">Historique</a></li>
+                            <li><a href="sciencefiction.html">Science-fiction</a></li>
+                            <li><a href="reflexions.html">Réflexion</a></li>                 
+                        </ul>              
+                    </li>
+
+                    <li class="deroulant"><a href="#">Poésies</a>
+                        <ul class="submenu">
+                            <li><a href="classiques.html">Classique</a></li>
+                            <li><a href="contemporaine.html">Contemporaine</a></li>
+                            <li><a href="prose.html">En Prose</a></li>
+                            <li><a href="poésielibre.html">Poésie libre</a></li>
+                            <li><a href="chansons.html">Chanson</a></li>
+                            <li><a href="reflexions.html">Réflexion</a></li>                 
+                        </ul>              
+                    </li>
+                    <li><a href="charte.html">Charte</a></li>                    
+                    <li><a href="liens.html">Liens</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul> 
+
+            </nav>
+
+        </header>
+
+        <!--INSCRIPTION/CONNECTION-->
+
+
+        <div class="barreinscription">
+
+            <ul id="ulinscription">
+
+
+                <!--<c:choose>
+<c:when test="${empty sessionScope.sessionUtilisateur}">-->
+                <li><a href="inscription.html">Inscription</a></li>
+                <li><a href="#">Connexion</a></li>
+                <!--</c:when>
+<c:otherwise>-->
+                <li><a href="#">Déconnexion</a></li>
+                <!-- </c:otherwise>
+</c:choose>-->
+            </ul>
+
+            <div id="script"><SCRIPT LANGUAGE="JavaScript">
+                var ladate = new Date()
+                var tab_jour = new Array("Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi");
+                var tab_mois = new Array("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre");
+                Jour = ladate.getDate();
+                Heure = ladate.getHours();
+                Min = ladate.getMinutes();
+                Annee = ladate.getFullYear();          
+                var dateFormatee = (tab_jour[ladate.getDay()] + " " + Jour + " "
+                                    + tab_mois[ladate.getMonth()] + " " + Annee + " &nbsp;" + "&nbsp;" + Heure + ":"
+                                    + Min)
+                document.write(dateFormatee);
+                </SCRIPT></div>
+        </div>
+
+        <!--**************************************************************************************************************-->
+        <!--*************************************************///CENTRE///*************************************************-->
+        <!--**************************************************************************************************************-->
+        <div class="centre">
+
+            <!--PARAGRAPHE/NOUVELLES-->
+            <main> <!--Prend toute la partie paragraphe et nouvelles-->
+
+                <article>
+                    <div><h5>Bienvenue sur Nouvelles de Rêves, site de publications littéraires</h5></div> 
+                    <section id="img">
+                        <h4>Nouvelles de Rêves</h4>
+                        <p>Nouvelles de Rêves est un site consacré à la littérature. Il est né afin d'offrir aux auteurs une possibilité de présenter leurs écrits devant un public composé à la fois d'auteurs et de simples passionnés de littérature. Les activités de "Nouvelles de Rêves" sont principalement tournées vers la publication de nouvelles et la publication de poésies. </p>                        
+                        <p>Nouvelles de Rêves se veut un site vivant. En effet, vous trouverez ici une véritable communauté occupée à toutes sortes d'activités comme l'écriture, l'évaluation des récits, l'échange d'informations littéraires ou linguistiques, ou encore la correction orthographique et typographique des récits reçus afin de présenter les publications au meilleur niveau possible. Sans oublier les moments de détente et de récréation...</p>                     
+                        <p>Vous êtes auteur débutant ou professionnel et vous souhaitez progresser dans l'art de l'écriture?. Proposez vos écrits et vous recevrez différents commentaires de lecteurs en retour. </p>                        
+                        <p><I>Vous êtes lecteur et amateur de littérature?...Nouvelles de Rêves vous propose un catalogue de nouvelles et de poésies que vous êtes invités à commenter au gré de vos lectures.</I></p>
+                    </section> 
+                </article>
+
+                <article>                
+                    <div><h5>La dernière Nouvelle</h5></div>    
+                    <c:forEach  items="${requestScope.derniere}" var="dernierenouvelle" >
+                        <h3 id="h3lastnews">Super nouvelle<span class="spanouvelle"> écrite par </span>Gaëlle</h3>
+                        <!--   <span class="spandate"><fmt:formatDate pattern = "dd/MM/yy" value = "${nouvelle.dateCreation}" /></span>-->
+                    </c:forEach>
+                    <!-- <h3  id="h3lastnews"><c:out value="${nouvelle.titre}" /> <span class="spanouvelle"> par </span><c:out value="${nouvelle.auteur}"/></h3>--> 
+                </article>
+
+                <article> 
+                    <div id="h5dixnouvelles"><h5>Les dernières nouvelles publiées</h5></div>  
+                    <section id="section">
+                        <section> 
+
+                            <!--Les 10 dernières nouvelles avec un foreach-->
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Nouvelle extraordinaire<span class="spanouvelle"> écrite par </span>Laurent</h3>
+                                <!--  <span class="spandate"><fmt:formatDate pattern = "dd/MM/yy" value = "${nouvelle.dateCreation}" /></span>--> 
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Belle aventure<span class="spanouvelle"> écrite par </span>Charlie</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">magnifique site!!<span class="spanouvelle"> écrite par </span>Jeanne</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Le printemps arrive<span class="spanouvelle"> écrite par </span>aïe</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Le loup fait peur à Jeanne<span class="spanouvelle"> écrite par </span>Charlie</h3>
+                            </c:forEach>
+                            
+                                       <!--Les 10 dernières nouvelles avec un foreach-->
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Nouvelle extraordinaire<span class="spanouvelle"> écrite par </span>Laurent</h3>
+                                <!--  <span class="spandate"><fmt:formatDate pattern = "dd/MM/yy" value = "${nouvelle.dateCreation}" /></span>--> 
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Belle aventure<span class="spanouvelle"> écrite par </span>Charlie</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">magnifique site!!<span class="spanouvelle"> écrite par </span>Jeanne</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Le printemps arrive<span class="spanouvelle"> écrite par </span>aïe</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Le loup fait peur à Jeanne<span class="spanouvelle"> écrite par </span>Charlie</h3>
+                            </c:forEach>
+                        </section> 
+
+                        <section> 
+
+                            <!--Les 10 dernières nouvelles avec un foreach-->
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Nouvelle extraordinaire<span class="spanouvelle"> écrite par </span>Laurent</h3>
+                                <!--  <span class="spandate"><fmt:formatDate pattern = "dd/MM/yy" value = "${nouvelle.dateCreation}" /></span>--> 
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Belle aventure<span class="spanouvelle"> écrite par </span>Charlie</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">magnifique site!!<span class="spanouvelle"> écrite par </span>Jeanne</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Le printemps arrive<span class="spanouvelle"> écrite par </span>aïe</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Le loup fait peur à Jeanne<span class="spanouvelle"> écrite par </span>Charlie</h3>
+                            </c:forEach>
+                            
+                                       <!--Les 10 dernières nouvelles avec un foreach-->
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Nouvelle extraordinaire<span class="spanouvelle"> écrite par </span>Laurent</h3>
+                                <!--  <span class="spandate"><fmt:formatDate pattern = "dd/MM/yy" value = "${nouvelle.dateCreation}" /></span>--> 
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Belle aventure<span class="spanouvelle"> écrite par </span>Charlie</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">magnifique site!!<span class="spanouvelle"> écrite par </span>Jeanne</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Le printemps arrive<span class="spanouvelle"> écrite par </span>aïe</h3>
+                            </c:forEach>
+
+                            <c:forEach  items="${requestScope.essai}" var="nouvelle" >
+                                <h3 id="h3dixnouvelles">Le loup fait peur à Jeanne<span class="spanouvelle"> écrite par </span>Charlie</h3>
+                            </c:forEach>
+                        </section>
+                    </section>
+                </article>  
+
+
+            </main><!--Prend toute la partie paragraphe et nouvelles-->
+            <!--PARAGRAPHE/NOUVELLES-->
+
+        </div>
+        <!--**************************************************************************************************************-->
+        <!--*************************************************///FIN CENTRE///*************************************************-->
+        <!--**************************************************************************************************************-->
+
+        <!--FOOTER-->
+
+        <footer>
+            <ul id="copyright"> 
+                <!-- Vérification de la présence d'un objet utilisateur en session -->
+                <c:choose>
+                    <c:when test="${!empty sessionScope.sessionUtilisateur}">
+                        <!-- Si l'utilisateur existe en session, alors on affiche son adresse email. -->
+
+
+                        <li>Vous êtes connecté(e) avec l'adresse : ${sessionScope.sessionUtilisateur.mail}</li>
+
+                    </c:when>
+                    <c:otherwise>
+                        <li>Vous n'êtes pas connecté. Souhaitez-vous vous <a href="connexion.html">connecter?</a></li>
+
+                    </c:otherwise>
+                </c:choose>
+
+
+
+                <li>NouvellesDeRêves©Copyright 2021 | Tous droits réservés</li>
+                <li>Designed by Glotin Laurent</li> 
+            </ul>
+
+
+
+        </footer>
+        <!--FOOTER-->
+
+    </body>  
+
+</html> 

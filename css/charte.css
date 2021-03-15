@@ -1,0 +1,370 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 21 avr. 2020, 16:42:45
+    Author     : Glotin Laurent
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro&family=Dancing+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+/*
+font-family: 'Advent Pro', sans-serif;
+font-family: 'Dancing Script', cursive;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Advent+Pro&family=Dancing+Script&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Lovers+Quarrel&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap');
+
+
+*{margin:0; padding: 0; box-sizing: border-box;}
+/* aucune marge sur tous les éléments, et éléments avec les marges sont calculés directement*/
+
+@media screen and (max-width: 6000px) {/*grand écran*/
+   h1{font-size: 3em; color: darkslateblue;margin-right: 30px;
+     text-align: right;}
+    p, h3,header a, .ulcharte li{font-size: 1.4em;color: darkslateblue;} 
+    #script,#ulinscription a,.tousaside a, label,footer li,form input{font-size: 1.1em;color: darkslateblue;}
+    footer a{font-size: 1.2em;color: darkslateblue;}
+    h5{font-size: 1em;}
+    .spanouvelle{font-size: 0.8em;}
+    h4{font-size: 2.2em; color: darkslateblue;}
+}
+
+
+@media screen and (max-width: 1800px) {/*écran pc normal 17' entre 1300 et 1800px*/
+   h1{font-size:2.6em; color: darkslateblue;margin-right: 30px;
+     text-align: right;}
+    p,h3,header a, .ulcharte li{font-size: 1.2em; color: darkslateblue;}
+    #script,#ulinscription a,.tousaside a, label,footer li,form input{font-size: 1em; color: darkslateblue;}
+    footer a{color: darkslateblue;}
+    h5{font-size: 0.9em;}
+    .spanouvelle{font-size: 0.65em; color: darkslateblue;}
+    h4{font-size: 1.8em; color: darkslateblue;} 
+}
+
+
+@media screen and (max-width: 1300px) {/*écran hp ancien entre 900 et 1300px*/
+   h1{font-size: 2.3em;color: darkslateblue;margin-right: 30px;
+     text-align: right;}
+    p,h3,header a, .ulcharte li{font-size: 1em; color: darkslateblue;} 
+    #script,#ulinscription a,.tousaside a, label, footer li,form input{font-size: 0.85em; color: darkslateblue;}
+    footer a{color: black;}
+    h5{font-size: 0.75em;}
+    .spanouvelle{font-size: 0.6em;color: darkslateblue;}
+    h4{font-size: 1.6em;color: darkslateblue;}
+}
+
+
+@media screen and (max-width: 900px) {/*tablette entre 480 et 900*/
+    .tousaside{display: none;}
+   h1{font-size:2em; color: darkslateblue; margin-right: 30px;
+     text-align: right;}
+    p,h3,header a, .ulcharte li{ font-size: 0.8em;color: darkslateblue; }
+    #script,#ulinscription a,.tousaside a,label, footer li,form input{font-size: 0.65em; color: darkslateblue;}
+    footer a{color: darkslateblue;}
+    h5{font-size: 0.60em;}
+    .spanouvelle{font-size: 0.5em;color: darkslateblue;}
+    h4{font-size: 1.4em;color: darkslateblue;}
+}
+
+
+
+@media screen and (max-width: 480px) {/*portable*/
+    .tousaside{display: none;}
+   h1{font-size:1.3em;color: darkslateblue; text-align: left;
+    margin-left: 10px;}
+    p,h3,header a, .ulcharte li{font-size: 0.6em;color: darkslateblue;}
+    #script,#ulinscription a,.tousaside a, label,footer li,form input{font-size: 0.6em; color: darkslateblue;}
+    footer a{color: darkslateblue;}
+    h5{font-size: 0.5em;}
+    .spanouvelle{font-size: 0.4em;color: darkslateblue;}
+    h4{font-size: 1em;color: darkslateblue;}
+}
+
+@font-face {
+    font-family: 'Aileron-Bold';
+    src: url('inc/Aileron-Bold.otf') format('truetype');
+}
+
+
+html{
+    background-color:darkslategray;
+}
+
+body {
+ height : 110vh;
+    /*    font-family:'Aileron-Regular';*/
+    font-family: 'Advent Pro', sans-serif;     
+    background-color:floralwhite;
+    margin: 5px 10px 5px 10px;
+    display: flex;
+    flex-direction: column; 
+    border-radius: 20px;
+}
+
+/**************************************************************************/
+/*HEADER*/
+/**************************************************************************/
+header{
+    background: url(moon.jpg) ;
+    height: 30vh;/*viewport height=>basé sur la hauteur de la fénêtre, ici 35%*/ 
+    background-position: center;/*se positionne pour voir l'image au centre */ 
+    background-size: cover;/*l'image remplit tout l'espace en conservant hauteur/largeur*/ 
+    display: flex;/* les blocs se placent par défaut côte à côte à l'horizontal*/  
+    flex-direction: column;/* les blocs se placent par colonne les uns sous les autres*/ 
+    justify-content: space-between;
+    border-top-left-radius:  20px;
+    border-top-right-radius:  20px;
+}
+
+
+/****TITRE****/
+h1{
+    animation-name:  monanimation;/*l'animation est appelé ici*/ 
+    animation-duration: 10s;
+/*
+    margin-right: 20px;
+     text-align: right;header h1 aligné à droite 
+*/
+    margin-top: 15px;/*header h1 marge en haut*/ 
+    font-family: 'Lovers Quarrel', cursive;   
+    /*    color: darkslateblue;*/
+    /*    font-size: 2.5em;header h1 taille police */
+    overflow: hidden;/*s'efface quand il n'y a plus de place*/
+    font-weight: 600;/*font avec valeur numérique correspondant à un bold léger plus*/
+}
+
+@keyframes monanimation{/*construction de l'animation pour le h1*/ 
+    30%{transform: scale3d(0.7, 1, 2.5);}/*h1 descend et tourne, premier chiffre vitesse*/ 
+}
+
+/****BARRE DE NAVIGATION****/
+
+header nav{
+    /*background-color:antiquewhite;*/
+    /*opacity: 0.8;*/
+    background-color: rgba(250, 235, 215, 0.8);
+    /*on priviligie rgba afin d'utiliser l'opacity car elle ne va pas hériter les autres élements à l'instar d'opacity*/
+} 
+
+
+.menu{
+    display: flex;/*les blocs se placent par défaut côte à côte à l'horizontal*/
+    list-style-type: none; /*Enlever les points devants les li*/
+    margin: 0; 
+    padding-left: 0;
+} 
+
+.submenu{
+    background-color: rgba(246, 231, 211, 0.95);   
+    list-style-type: none; /*Enlever les points devants les li*/  
+    display: none;
+    position: absolute; /*Pour que les gds menus s'affichent normalement*/
+    left: 0;/* permet de centrer les li sous menu*/
+    right: 0;
+}
+
+.deroulant:hover{
+    /*background-color: #D2B48C;changement couleur lorsque l'on passe sur <a>*/
+    background-color: rgba(210, 180, 140, 0.7);
+} 
+
+.deroulant a:hover{
+    transform: scale(1.05); /*survole avec le pointeur grossissement*/
+}
+
+.menu li, .deroulant{
+    text-align: center;
+    flex: 1 /* L'espace dans le conteneur parent ul est réparti également avec ses enfants li */
+}
+nav a{
+    color: darkslateblue;
+    display: block;/*elles prennent toute la largeur disponible*/
+    text-decoration: none;
+    padding: 5px 0px 5px 0px;/* espace en haut et en bas*/
+    font-weight: bold;
+}
+
+.submenu li:hover{
+    background-color: #D2B48C;
+    cursor: pointer; /*Changer le curseur*/
+}
+
+.menu > li:hover .submenu {
+    display: block;
+    opacity: 1;
+}
+
+.menu > li{
+    position: relative;
+
+}
+
+#logo {
+    font-family: 'Dancing Script', cursive;
+    font-weight: bold;
+}
+
+/****FIN BARRE DE NAVIGATION****/
+
+/**************************************************************************/
+/* FIN HEADER*/
+/**************************************************************************/
+
+
+
+/**************************************************************************/
+/*INSCRIPTION*/
+/**************************************************************************/
+.barreinscription{
+    padding: 2px;
+    display: flex;
+    align-content: center;
+    justify-content:space-between;
+    flex-wrap: wrap; /*met à la ligne les éléments si écran reduit*/
+    border-bottom: 1px solid #DCDCDC;
+}
+
+#script{
+    margin: 5px; 
+    /*    font-size: 0.9em;*/
+    /* color: darkslateblue;*/
+    font-weight: bold;  
+    overflow: hidden;
+}
+
+
+#ulinscription{
+    list-style-type: none;/*enlève les points sur les li*/ 
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+#ulinscription li a{
+    display: flex;
+    margin: 5px;   
+    font-weight: bold;
+    text-decoration: none;
+    /*        color: darkslateblue;*/
+}
+
+#ulinscription  li:hover{
+    transform: scale(1.05);
+}
+/**************************************************************************/
+/*FIN INSCRIPTION*/
+/**************************************************************************/
+
+/*CENTRE*/
+article{
+    min-height:55vh;
+    margin: 20px 10px 0px 10px;
+/*
+    display: flex;
+    flex-direction: column; 
+*/
+}
+
+p{
+    margin-bottom: 5px;
+    font-weight: 400;
+   
+}
+
+.ulcharte{
+    color: brown;
+    font-weight: 600;
+    list-style-type: none; /*Enlever les points devants les li*/
+}
+
+.ulcharte li{
+ 
+    margin-bottom: 4px;
+}
+
+/*FIN CENTRE*/
+
+/*FORM*/
+form{
+    min-height:55vh;
+    margin: 20px 10px 0px 10px;
+}
+
+form label {
+    float: left;
+    width: 200px;
+    margin: 3px 0px 0px 0px;
+}
+
+form input {
+    margin: 3px 3px 0px 0px;
+    border: 1px #999 solid;
+}
+
+form input.sansLabel {
+    margin-left: 200px;
+}
+
+fieldset {
+    padding: 10px;
+    border: 1px #0568CD solid;
+}
+
+legend {
+    font-weight: bold;
+    color: #0568CD;
+}
+
+form .requis {
+    color: #c00;
+}
+
+.erreur {
+    color:#900;
+}
+
+.succes{
+    color:#090;
+}
+
+/*FIN FORM*/
+
+/*FOOTER*/
+/**************************************************************************/
+
+footer{
+    margin-top: 20px;
+    border-top: 1px solid #DCDCDC;
+    font-weight: 500;
+}
+footer a{
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+#copyright{
+    background-size: cover;
+    overflow: hidden; 
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /*wrap met à la ligne les li losqu'il n'y a plus de place horizontale*/
+    list-style-type: none;/*enlève les points sur les li*/    
+    margin: 10px;
+    align-items:center; /* aligne les li */
+}
+
+#reseau{
+    list-style-type: none;/*enlève les points sur les li*/   
+    display: flex;
+    align-items:center;
+    /*wrap met à la ligne les li losqu'il n'y a plus de place horizontale*/
+}
